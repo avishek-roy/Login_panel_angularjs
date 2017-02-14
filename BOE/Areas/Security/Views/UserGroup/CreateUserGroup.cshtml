@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    .glyphicon {
+        float: right;
+    }
+</style>
+
+
+
+  <div ng-controller="userGroupController" class="col-md-12">
+    <section class="content-header padding-top-5">
+        <h1>
+            User Group
+            <small> Administration Related Data </small>
+        </h1>
+        <ol class="breadcrumb ">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Administration</a></li>
+            <li class="active">User Group </li>
+        </ol>
+    </section>
+    <section class="content padding-top-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Create User Group</h3>
+                    </div>
+                    <form name="CreateUserGroupForm">
+                        <div class="box-body">
+                            <div class="col-md-12" style="padding-left:0px">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>
+                                            User Group
+                                        </label>
+                                        <input type="text" style="padding-top:5px;" class="form-control custome-textbox" ng-maxlength=" 30" class="form-control input-sm" ng-model="userGroup.Name" required placeholder="User Group Name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Is Admin ?
+                                        </label>
+                                        <div class="form-control ">
+                                            <input style="height:13px;" type="checkbox" ng-model="serGroup.IsAdmin" ng-change="CheckBoxChanged()" /> &nbsp; Is Admin
+                                        </div>
+
+                                        @*<label>
+                                            Is Admin
+                                        </label>
+                                        <input type="checkbox" ng-model="userGroup.IsAdmin">*@
+                                    </div>
+                                </div>
+                            </div>
+                            <table id="entry-grid" datatable="" dt-options="dtOptionsCreate" dt-columns="dtColumnsCreate" class="table table-striped table-bordered table-hover" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th ng-click="sortData(0,0)">
+                                            <div ng-class="getSortClass(0,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(1,0)">
+                                            <div ng-class="getSortClass(1,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(2,0)">
+                                            <div ng-class="getSortClass(2,0)"></div>
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                        <th>
+
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th ng-click="sortData(0,1)">
+                                            Application
+                                            <div ng-class="getSortClass(0,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(1,1)">
+                                            Module
+                                            <div ng-class="getSortClass(1,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(2,1)">
+                                            Page
+                                            <div ng-class="getSortClass(2,1)"></div>
+                                        </th>
+                                        <th>
+                                            Select
+                                        </th>
+                                        <th>
+                                            Create
+                                        </th>
+                                        <th>
+                                            Edit
+                                        </th>
+                                        <th>
+                                            Delete
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                           </div>
+                        <div class="box-footer">
+                            <button type="submit" value="Save" style="float:left;" data-ng-click="CreateUserGroup()" class="btn btn-success button-size-small glyphicon"><span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                            .<button value="Clear" ng-click="Reload()" class="btn btn-primary button-size-small"><span class="glyphicon glyphicon-repeat"></span>Clear</button>
+                            @*.<a href="/#/CreateUserGroup" type="button" class="btn btn-primary button-size-small"><span class="glyphicon glyphicon-repeat"></span>Clear</a>*@
+                            <a href="/#/UaerGroup" type="button" class="btn btn-warning button-size-small"><span class="glyphicon glyphicon-hand-left"></span>Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+   </section>
+  </div>

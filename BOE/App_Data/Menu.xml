@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <!-- Start Basic Menu -->
+
+  <MenuItem>
+    <MenuID>1</MenuID>
+    <ApplicationID>Basic</ApplicationID>
+    <ModuleID>0</ModuleID>
+    <PageID>0</PageID>
+    <ModuleName>Basic</ModuleName>
+    <URL></URL>
+    <IconClass>fa fa fa-suitcase</IconClass>
+  </MenuItem>
+
+  <!-- Start Broker Related Menu -->
+  <MenuItem>
+    <MenuID>2</MenuID>
+    <ApplicationID>Basic</ApplicationID>
+    <ModuleID>BrokerRelated</ModuleID>
+    <PageID>0</PageID>
+    <ModuleName>BrokerRelated</ModuleName>
+    <URL></URL>
+    <IconClass>fa fa-plus-square</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>3</MenuID>
+    <ApplicationID>Basic</ApplicationID>
+    <ModuleID>BrokerRelated</ModuleID>
+    <PageID>1</PageID>
+    <ModuleName>Location</ModuleName>
+    <URL>/#/Locations</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+
+  <!-- End Broker Related Menu -->
+  
+  <!-- Start Investor Related Menu -->
+  <!-- End Investor Related Menu -->
+  <!-- Start Trade  Menu -->
+  <!-- End Trade  Menu -->
+  <!-- End Transaction  Menu -->
+  <!-- End Transaction  Menu -->
+
+  <!-- Start Administration  Menu -->
+  <MenuItem>
+    <MenuID>4</MenuID>
+    <ApplicationID>Administration</ApplicationID>
+    <ModuleID>Administration</ModuleID>
+    <PageID>0</PageID>
+    <ModuleName>Administration</ModuleName>
+    <URL></URL>
+    <IconClass>fa fa-users</IconClass>
+  </MenuItem>
+    <MenuItem>
+    <MenuID>5</MenuID>
+    <ApplicationID>Administration</ApplicationID>
+    <ModuleID>Administration</ModuleID>
+    <PageID>5</PageID>
+    <ModuleName>User</ModuleName>
+    <URL>/#/User</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>6</MenuID>
+    <ApplicationID>Administration</ApplicationID>
+    <ModuleID>Administration</ModuleID>
+    <PageID>4</PageID>
+    <ModuleName>UserGroup</ModuleName>
+    <URL>/#/UaerGroup</URL>
+    <IconClass>fa fa-circle-o</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>7</MenuID>
+    <ApplicationID>Administration</ApplicationID>
+    <ModuleID>Administration</ModuleID>
+    <PageID>2</PageID>
+    <ModuleName>ChangePassword</ModuleName>
+    <URL>/#/SelfChabgePassword</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>8</MenuID>
+    <ApplicationID>Administration</ApplicationID>
+    <ModuleID>Administration</ModuleID>
+    <PageID>3</PageID>
+    <ModuleName>ChangePasswordByAdmin</ModuleName>
+    <URL>/#/AdminChangePassword</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+    <MenuItem>
+    <MenuID>9</MenuID>
+    <ApplicationID>ClientServey</ApplicationID>
+    <ModuleID>ClientServey</ModuleID>
+    <PageID>6</PageID>
+    <ModuleName>ClientDeposite</ModuleName>
+    <URL>/#/SurveyDeposite</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>10</MenuID>
+    <ApplicationID>ClientServey</ApplicationID>
+    <ModuleID>ClientServey</ModuleID>
+    <PageID>7</PageID>
+    <ModuleName>TraderPositionByDeposite</ModuleName>
+    <URL>/#/TraderPositionByDeposite</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>11</MenuID>
+    <ApplicationID>ClientServey</ApplicationID>
+    <ModuleID>ClientServey</ModuleID>
+    <PageID>8</PageID>
+    <ModuleName>ClientSurvey</ModuleName>
+    <URL>/#/SurveyComnucation</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+  <MenuItem>
+    <MenuID>12</MenuID>
+    <ApplicationID>ClientServey</ApplicationID>
+    <ModuleID>ClientServey</ModuleID>
+    <PageID>9</PageID>
+    <ModuleName>SurveyStatusMonitor</ModuleName>
+    <URL>/#/SurveyStatusMonitor</URL>
+    <IconClass>fa fa-minus-square</IconClass>
+  </MenuItem>
+  <!-- End Administration  Menu -->
+
+</Menu>

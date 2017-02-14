@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<link href="~/Content/developerCSS/developerCSS.css" rel="stylesheet" />
+
+
+<div ng-controller="ClientSurveyDepositController" class="col-md-12">
+    <section class="content-header padding-top-5">
+        <h1>
+            Client Deposit
+            <small> Client Deposit Related Data</small>
+        </h1>
+        <ol class="breadcrumb ">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Client Survey Entry</a></li>
+            <li class="active">Client Survey Deposit </li>
+        </ol>
+    </section>
+    <section class="content padding-top-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Edit Client Deposit</h3>
+                    </div>
+                    <form name="ClientSurveyDepositeEditForm" ng-init="LoadEditDropdowns()">
+                        <input type="hidden" ng-model="surveyDeposite.ID" />
+                        <div class="box-body">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>
+                                        Client Code
+                                    </label>
+                                    <input type="text" class="form-control" ng-maxlength=" 16" ng-model="surveyDeposite.DepositeNo" placeholder="Max. 16 Characters" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Client Type
+                                    </label>
+                                    <select ng-model="surveyDeposite.ClientType" required class="dropdown form-control input-sm"
+                                            ng-options="Type.Value as Type.Text for Type in TypeList">
+                                        <option value=""> Select Client Type </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>
+                                        Deposit Amount
+                                    </label>
+                                    <input type="text" class="form-control" ng-model="surveyDeposite.Amount" placeholder="Number only" onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 46 || event.keyCode == 8 || event.keyCode == 46)' required />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" style="margin-top:1%">
+                                    <label>
+                                        Deposit Date
+                                    </label>
+                                    <div class="input-group" moment-picker="surveyDeposite.DepositeDateEdit" format="DD-MM-YYYY">
+                                        <input type="text" class="form-control" placeholder="Select a date"
+                                               ng-model="surveyDeposite.DepositeDateEdit"
+                                               onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 46 || event.keyCode == 8 || event.keyCode == 46)'
+                                               ng-model-options="{ updateOn: 'blur' }">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </span>
+                                    </div>
+                                    @*<input type="date" class="form-control datepicker datemask" style="height: 33px;" placeholder="dd/mm/yyyy" ng-model="surveyDeposite.DepositeDate" required />*@
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-footer" style="margin-top:1%">
+                            <button type="submit" value="Save" data-ng-click="UpdateSurveyDeposite()" class="btn btn-success button-size-small glyphicon"><span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                            <a href="/#/SurveyDeposit" type="button" class="btn btn-warning button-size-small"><span class="glyphicon glyphicon-hand-left"></span>Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+

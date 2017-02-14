@@ -1,0 +1,106 @@
+﻿@{
+    Layout = null;
+}
+
+<link href="~/Content/developerCSS/developerCSS.css" rel="stylesheet" />
+
+
+<div ng-controller="VoucherController" class="col-md-12">
+    <section class="content-header">
+        <h1>Voucher</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Voucher</a></li>
+            <li class="active">Voucher</li>
+        </ol>
+    </section>
+    <div class="box box-solid box-primary">
+        <div class="box-header" >
+            <h3 class="box-title">Voucher Entry</h3>
+        </div>
+        <form name="VoucherEntryForm" ng-init="LoadDropdowns()" style="margin-top:5%;height:99%">
+            <div class="box-body" style="padding-bottom:0px;">
+                <div class="col-md-12">
+                    <div class="col-md-10">
+                        <div class="form-group" style="margin-top:1%">
+                            <div class="col-md-12">
+                                <label class="label size-14 text-black line-height-1pt10">
+                                    Contact No
+                                </label>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control input-sm custome-textbox" ng-keypress="filterValueForNumberOnly($event)" ng-model="survey.ContactNo" placeholder="Contact No" />
+                            </div>
+                        </div>
+                        <div style="clear:both">
+
+                        </div>
+                        <div class="form-group" style="margin-top:1%">
+                            <div class="col-md-12">
+                                <label class="label size-14 text-black line-height-1pt10">
+                                    Email
+                                </label>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="email" class="form-control input-sm custome-textbox" ng-model="survey.EMail" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div style="clear:both">
+
+                        </div>
+                        <div class="form-group" style="margin-top:1%">
+                            <div class="col-md-12">
+                                <label class="label size-14 text-black line-height-1pt10">
+                                    Address
+                                </label>
+                            </div>
+                            <div class="col-md-12" style="padding-left:8px;width:98%">
+                                <textarea class="form-control input-sm custome-textbox" ng-model="survey.Address" ng-pattern="/[a-zA-Z0-9^ ]/" placeholder="Address" />
+                            </div>
+                        </div>
+                        <div style="clear:both">
+
+                        </div>
+                        <div class="form-group" style="margin-top:1%">
+                            <div class="col-md-12">
+                                <label class="label size-14 text-black line-height-1pt10">
+                                    Reason
+                                </label>
+                            </div>
+                            <div class="col-md-12" style="padding-left:8px;width:98%">
+                                <textarea class="form-control input-sm custome-textbox" ng-model="survey.Reason" ng-pattern="/[a-zA-Z0-9^ ]/" placeholder="Reason" />
+                            </div>
+                        </div>
+                        <div style="clear:both">
+
+                        </div>
+                        <div class="form-group" style="margin-top:1%">
+                            <div class="col-md-12">
+                                <label class="label size-14 text-black line-height-1pt10">
+                                    Follow Up Date
+                                </label>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="date" class="form-control datepicker datemask" style="height: 33px;" placeholder="dd/mm/yyyy" ng-model="survey.FollowUpDate" />
+                            </div>
+                        </div>
+                        <div style="clear:both">
+
+                        </div>
+                        <div class="box-footer" style="margin-top:1%">
+                            .<br />
+                            <button type="submit" value="Save" data-ng-click="SaveServayEntry()" class="btn btn-success button-size-small glyphicon"><span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                            <a href="/#/CreateSurvey" type="button" class="btn btn-primary button-size-small glyphicon"><span class="glyphicon glyphicon-repeat"></span>Reset</a>
+                            <a href="/#/SurveyComnucation" type="button" class="btn btn-warning button-size-small glyphicon"><span class="glyphicon glyphicon-hand-left"></span>List</a>
+                            <br />
+                            <br />
+                            .
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

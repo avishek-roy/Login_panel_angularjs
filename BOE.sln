@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOE", "BOE\BOE.csproj", "{4929C262-A635-49D5-B823-CD7E3595234F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOEService", "BOEService\BOEService.csproj", "{0C919097-5D1F-4F60-B93B-4355E757CE53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOEUtility", "BOEUtility\BOEUtility.csproj", "{8BC04FD8-E07F-4ED3-BB8E-32A0D3C06B8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4929C262-A635-49D5-B823-CD7E3595234F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4929C262-A635-49D5-B823-CD7E3595234F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4929C262-A635-49D5-B823-CD7E3595234F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4929C262-A635-49D5-B823-CD7E3595234F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C919097-5D1F-4F60-B93B-4355E757CE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C919097-5D1F-4F60-B93B-4355E757CE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C919097-5D1F-4F60-B93B-4355E757CE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C919097-5D1F-4F60-B93B-4355E757CE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC04FD8-E07F-4ED3-BB8E-32A0D3C06B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC04FD8-E07F-4ED3-BB8E-32A0D3C06B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC04FD8-E07F-4ED3-BB8E-32A0D3C06B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC04FD8-E07F-4ED3-BB8E-32A0D3C06B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

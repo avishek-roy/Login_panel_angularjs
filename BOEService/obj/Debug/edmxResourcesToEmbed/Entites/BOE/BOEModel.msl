@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BOEModelStoreContainer" CdmEntityContainer="BOEEntities">
+    <EntitySetMapping Name="TBLA_APPLICATION_MODULE">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_APPLICATION_MODULE">
+        <MappingFragment StoreEntitySet="TBLA_APPLICATION_MODULE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UIName" ColumnName="UIName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_CRUDLOG">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_CRUDLOG">
+        <MappingFragment StoreEntitySet="TBLA_CRUDLOG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="MacAddress" ColumnName="MacAddress" />
+          <ScalarProperty Name="DeviceAddress" ColumnName="DeviceAddress" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="PageID" ColumnName="PageID" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_LOGIN_STATUS">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_LOGIN_STATUS">
+        <MappingFragment StoreEntitySet="TBLA_LOGIN_STATUS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PresentLogInStatus" ColumnName="PresentLogInStatus" />
+          <ScalarProperty Name="LogInTime" ColumnName="LogInTime" />
+          <ScalarProperty Name="LogOutTime" ColumnName="LogOutTime" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ForcedLogOutStatus" ColumnName="ForcedLogOutStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_PASSWORD">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_PASSWORD">
+        <MappingFragment StoreEntitySet="TBLA_PASSWORD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NewPassword" ColumnName="NewPassword" />
+          <ScalarProperty Name="OldPassword" ColumnName="OldPassword" />
+          <ScalarProperty Name="IsSelfChanged" ColumnName="IsSelfChanged" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_SECURITY_QUESTION">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_SECURITY_QUESTION">
+        <MappingFragment StoreEntitySet="TBLA_SECURITY_QUESTION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SecurityQuestion" ColumnName="SecurityQuestion" />
+          <ScalarProperty Name="SecutiryAnswer" ColumnName="SecutiryAnswer" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_UI_MODULE">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_UI_MODULE">
+        <MappingFragment StoreEntitySet="TBLA_UI_MODULE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UIName" ColumnName="UIName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_UI_PAGE">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_UI_PAGE">
+        <MappingFragment StoreEntitySet="TBLA_UI_PAGE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UIPageName" ColumnName="UIPageName" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UrlID" ColumnName="UrlID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_URL">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_URL">
+        <MappingFragment StoreEntitySet="TBLA_URL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UIApplicationID" ColumnName="UIApplicationID" />
+          <ScalarProperty Name="UIModulID" ColumnName="UIModulID" />
+          <ScalarProperty Name="UIPageID" ColumnName="UIPageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_USER_ACTION_MAPPING">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_USER_ACTION_MAPPING">
+        <MappingFragment StoreEntitySet="TBLA_USER_ACTION_MAPPING">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="UIModuleID" ColumnName="UIModuleID" />
+          <ScalarProperty Name="UIPageID" ColumnName="UIPageID" />
+          <ScalarProperty Name="IsSelect" ColumnName="IsSelect" />
+          <ScalarProperty Name="IsCreate" ColumnName="IsCreate" />
+          <ScalarProperty Name="IsEdit" ColumnName="IsEdit" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="UrlID" ColumnName="UrlID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_USER_GROUP">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_USER_GROUP">
+        <MappingFragment StoreEntitySet="TBLA_USER_GROUP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLA_USER_INFORMATION">
+      <EntityTypeMapping TypeName="BOEModel.TBLA_USER_INFORMATION">
+        <MappingFragment StoreEntitySet="TBLA_USER_INFORMATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserFullName" ColumnName="UserFullName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="PasswordID" ColumnName="PasswordID" />
+          <ScalarProperty Name="SecurityQuestionID" ColumnName="SecurityQuestionID" />
+          <ScalarProperty Name="IsEMailVerified" ColumnName="IsEMailVerified" />
+          <ScalarProperty Name="IsPhoneNoVerified" ColumnName="IsPhoneNoVerified" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="UserGroupID" ColumnName="UserGroupID" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="TradingCode" ColumnName="TradingCode" />
+          <ScalarProperty Name="BOCode" ColumnName="BOCode" />
+          <ScalarProperty Name="IsClient" ColumnName="IsClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLB_COA">
+      <EntityTypeMapping TypeName="BOEModel.TBLB_COA">
+        <MappingFragment StoreEntitySet="TBLB_COA">
+          <ScalarProperty Name="COAID" ColumnName="COAID" />
+          <ScalarProperty Name="CostCenterID" ColumnName="CostCenterID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="GLName" ColumnName="GLName" />
+          <ScalarProperty Name="GLACNO" ColumnName="GLACNO" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="POSTFLAG" ColumnName="POSTFLAG" />
+          <ScalarProperty Name="DRCR" ColumnName="DRCR" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="AuthorizedBy" ColumnName="AuthorizedBy" />
+          <ScalarProperty Name="AuthorizedDate" ColumnName="AuthorizedDate" />
+          <ScalarProperty Name="AuthorizedStatus" ColumnName="AuthorizedStatus" />
+          <ScalarProperty Name="ActionStatus" ColumnName="ActionStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLB_COMPANY">
+      <EntityTypeMapping TypeName="BOEModel.TBLB_COMPANY">
+        <MappingFragment StoreEntitySet="TBLB_COMPANY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="RegisterationNo" ColumnName="RegisterationNo" />
+          <ScalarProperty Name="RegisterationDate" ColumnName="RegisterationDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ActivationDate" ColumnName="ActivationDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLB_LOCATION">
+      <EntityTypeMapping TypeName="BOEModel.TBLB_LOCATION">
+        <MappingFragment StoreEntitySet="TBLB_LOCATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ParentLocationId" ColumnName="ParentLocationId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLT_COA_TRANSACTION_DETAIL">
+      <EntityTypeMapping TypeName="BOEModel.TBLT_COA_TRANSACTION_DETAIL">
+        <MappingFragment StoreEntitySet="TBLT_COA_TRANSACTION_DETAIL">
+          <ScalarProperty Name="COATRANSACTIONDETAILID" ColumnName="COATRANSACTIONDETAILID" />
+          <ScalarProperty Name="COATransactionID" ColumnName="COATransactionID" />
+          <ScalarProperty Name="GLACNO" ColumnName="GLACNO" />
+          <ScalarProperty Name="DEBITAMT" ColumnName="DEBITAMT" />
+          <ScalarProperty Name="CREDITAMT" ColumnName="CREDITAMT" />
+          <ScalarProperty Name="TransType" ColumnName="TransType" />
+          <ScalarProperty Name="CHQNO" ColumnName="CHQNO" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLT_COA_TRANSACTION_MASTER">
+      <EntityTypeMapping TypeName="BOEModel.TBLT_COA_TRANSACTION_MASTER">
+        <MappingFragment StoreEntitySet="TBLT_COA_TRANSACTION_MASTER">
+          <ScalarProperty Name="COATRANSACTIONID" ColumnName="COATRANSACTIONID" />
+          <ScalarProperty Name="VoucherTypeID" ColumnName="VoucherTypeID" />
+          <ScalarProperty Name="VoucherNO" ColumnName="VoucherNO" />
+          <ScalarProperty Name="VoucherDate" ColumnName="VoucherDate" />
+          <ScalarProperty Name="CostCenterID" ColumnName="CostCenterID" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="DocRef" ColumnName="DocRef" />
+          <ScalarProperty Name="Narration" ColumnName="Narration" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="AuthorizedBy" ColumnName="AuthorizedBy" />
+          <ScalarProperty Name="AuthorizedDate" ColumnName="AuthorizedDate" />
+          <ScalarProperty Name="AuthorizedStatus" ColumnName="AuthorizedStatus" />
+          <ScalarProperty Name="ActionStatus" ColumnName="ActionStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLT_SURVEY_COMMUNICATION">
+      <EntityTypeMapping TypeName="BOEModel.TBLT_SURVEY_COMMUNICATION">
+        <MappingFragment StoreEntitySet="TBLT_SURVEY_COMMUNICATION">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ComnucationType" ColumnName="ComnucationType" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactNo" ColumnName="ContactNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="FeedBack" ColumnName="FeedBack" />
+          <ScalarProperty Name="FollowUpDate" ColumnName="FollowUpDate" />
+          <ScalarProperty Name="CommunicationDate" ColumnName="CommunicationDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLT_SURVEY_DEPOSIT">
+      <EntityTypeMapping TypeName="BOEModel.TBLT_SURVEY_DEPOSIT">
+        <MappingFragment StoreEntitySet="TBLT_SURVEY_DEPOSIT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DepositNo" ColumnName="DepositNo" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DepositeDate" ColumnName="DepositeDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

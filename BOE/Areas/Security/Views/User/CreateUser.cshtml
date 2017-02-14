@@ -1,0 +1,148 @@
+﻿@{
+    Layout = null;
+}
+
+<link href="~/Content/developerCSS/developerCSS.css" rel="stylesheet" />
+
+<div ng-controller="userController" class="col-md-12">
+    <section class="content-header padding-top-5">
+        <h1>
+          User
+            <small>Administration Related Data </small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Basic Entry</a></li>
+            <li class="active">User </li>
+        </ol>
+    </section>
+    <section class="content padding-top-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Create User</h3>
+                    </div>
+                    <form name="CreateUserForm" ng-init="LoadDropdowns()">
+                        <div class="box-body" style="padding-bottom:0px;">
+                            <div class="col-md-4 ">
+                                <div class="form-group">
+                                    <label>
+                                        User Name
+                                    </label>
+                                    <input type="text" class="form-control " ng-maxlength="20" ng-model="user.UserName" ng-trim="false" ng-change="user.UserName = user.UserName.split(' ').join('')" placeholder="Max. 20 Characters. User lowercase" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Full Name
+                                    </label>
+                                    <input type="text" class="form-control " ng-maxlength="150" ng-model="user.UserFullName" placeholder="Max. 150 Characters" required />
+                                </div>                               
+                                <div class="form-group">
+                                    <label>
+                                        Security Que.
+                                    </label>
+                                    <input type="text" class="form-control " ng-maxlength="300" ng-model="user.SecurityQuestion" placeholder="Max. 300 Characters" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Question Ans.
+                                    </label>
+                                    <input type="text" class="form-control " ng-maxlength="50" ng-model="user.SecurityQueAns" placeholder="Max. 50 Characters" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Password
+                                    </label>
+                                    <input type="password" class="form-control" ng-minlength="6" ng-model="user.Password" placeholder="Min. 6 Characters" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Confirm Password
+                                    </label>
+                                    <input type="password" class="form-control " ng-minlength="6" ng-model="user.ConfirmPassword" placeholder="Min. 6 Characters" required />
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="form-group">
+                                    <label>
+                                        Mobile No
+                                    </label>
+                                    <input type="text" class="form-control " ng-maxlength="14" onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 46 || event.keyCode == 8 || event.keyCode == 46)' ng-model="user.PhoneNo" placeholder="Ex. 8801717123456" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Email
+                                    </label>
+                                    <input type="email" ng-maxlength="100" class="form-control " ng-model="user.Email" placeholder="Max. 100 Characters" required />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Branch
+                                    </label>
+                                    <select data-ng-model="user.LocationID" class=" form-control"
+                                            ng-options="Location.ID as Location.Name for Location in LocationList" required>
+                                        <option value=""> Select Branch </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        User's Role
+                                    </label>
+                                    <select data-ng-model="user.UserGroupID" class=" form-control "
+                                            ng-options="UserGroup.ID as UserGroup.Name for UserGroup in UserGroupList" required>
+                                        <option value=""> Select User Group </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Address
+                                    </label>
+                                    <textarea class="form-control " ng-maxlength="300" ng-model="user.Address" rows="5" placeholder="Max. 300 Characters" required />
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="form-group">
+                                    <label>
+                                        Is Client ?
+                                    </label>
+                                    <div class="form-control ">
+                                        <input style="height:15px;" type="checkbox" ng-model="user.IsClient" ng-change="CheckBoxChanged()" /> &nbsp; Is Client 
+                                    </div>
+                                </div>
+                                <div class="form-group" id="Employee" ng-show="ShowEmp">
+                                    <label>
+                                        Employee Code
+                                    </label>
+                                    <input type="text" class="form-control" ng-maxlength="20" ng-model="user.Code" ng-trim="false" ng-change="user.Code = user.Code.split(' ').join('')" placeholder="Max. 20 Characters" />
+                                </div>
+                                <div class="form-group" id="TradingCode" ng-show="ShowTC">
+                                    <label>
+                                        Trading Code
+                                    </label>
+                                    <input type="text" class="form-control " ng-maxlength="20" ng-model="user.TradingCode" ng-trim="false" placeholder="Max. 20 Characters" />
+                                </div>
+                                <div class="form-group" id="BoCode" ng-show="ShowBC">
+                                    <label class="label size-14 text-black line-height-1pt10">
+                                        BO Code
+                                    </label>
+                                    <input type="text" class="form-control" ng-maxlength="16" ng-model="user.BOCode" ng-trim="false" ng-change="user.BOCode = user.BOCode.split(' ').join('')" placeholder="Max. 16 Characters" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" value="Save" data-ng-click="CreateUser()" class="btn btn-success button-size-small glyphicon"><span class="glyphicon glyphicon-floppy-disk"></span>Save</button>
+                            <button value="Clear" ng-click="Reload()" class="btn btn-primary button-size-small"><span class="glyphicon glyphicon-repeat"></span>Clear</button>
+                            <a href="/#/User" type="button" class="btn btn-warning button-size-small"><span class="glyphicon glyphicon-hand-left"></span>Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+@*http://candreoliveira.github.io/bower_components/angular-mask/examples/index.html#/*@
+
+
+

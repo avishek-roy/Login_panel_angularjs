@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNet.Identity
+@using BOEUtility.Helper;
+
+<ul class="nav navbar-nav navbar-left col-md-6" style="background-color:#cc3300">
+    @*<li class="hold-transition login-page login-box login-logo" style="color:white">
+        <a href="../../index2.html" style="color:white;font-size:xx-large"><b>B</b>ackoffice<b>Extended</b></a>
+    </li>*@
+    <li style="color:white">
+        <a href="../../index2.html" style="color:white;font-size:xx-large;background-color:#cc3300;"><b>B</b>ackoffice<b>Extended</b></a>
+    </li>
+</ul>
+@if (Session["logInSession"] != null || Session["logInSession"].ToString() != "true")
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        Dictionary<int, CheckSessionData> dictionary = CheckSessionData.GetSessionValues();
+
+        <ul class="nav navbar-nav navbar-right col-md-2" style="color:white;background-color:#cc3300;">
+            <li>
+                @Html.ActionLink("Hello " + dictionary[4].Id, "", "", routeValues: null, htmlAttributes: new { title = "Manage", style = "color:white;background-color:#cc3300;" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" style="color:white;background-color:#cc3300;">Log off</a></li>
+            @*<li><a href="/#User" style="color:white">Log off</a></li>*@
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right col-md-2">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", style = "color:white" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", style = "color:white" })</li>
+    </ul>
+}

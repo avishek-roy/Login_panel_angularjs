@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    .glyphicon {
+        float: right;
+    }
+
+    table.dataTable thead .sorting_asc {
+        background-image: none;
+    }
+
+    table.dataTable thead .sorting_desc {
+        background-image: none;
+    }
+
+    table.dataTable thead .sorting {
+        background-image: none;
+    }
+</style>
+
+<div ng-controller="ClientSurveyDepositController" class="container col-md-12">
+    <section class="content-header  padding-top-5">
+        <h1>
+            Client Deposit
+            <small> Client Deposit Related Data</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Client Survey</a></li>
+            <li class="active">Client Survey Deposit </li>
+        </ol>
+    </section>
+
+    <section class="content padding-top-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">List of Client Deposit</h3>
+                    </div>
+                    <div class="box-body" style="padding-bottom:0px;">
+                        <div>
+                            <a href="/#CreateSurveyDeposite" class="btn btn-success button-size-small"><span class="glyphicon glyphicon-plus"></span> Add New</a>
+                        </div>
+                        <div ng-if="isTableShown" class="col-md-12 no-padding">
+                            <table id="entry-grid" datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped table-bordered table-hover no-footer">
+                                <thead>
+                                    <tr>
+                                        <th ng-click="sortData(0,0)">
+                                            Deposit Date
+                                            <div ng-class="getSortClass(0,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(1,0)">
+                                            Client Code
+                                            <div ng-class="getSortClass(1,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(2,0)">
+                                            Amount
+                                            <div ng-class="getSortClass(2,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(3,0)">
+                                            Client Type
+                                            <div ng-class="getSortClass(3,0)"></div>
+                                        </th>
+                                        <th>
+                                            Edit/Delete
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th ng-click="sortData(0,1)">
+                                            Deposit Date
+                                            <div ng-class="getSortClass(0,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(1,1)">
+                                            Client Code
+                                            <div ng-class="getSortClass(1,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(2,1)">
+                                            Amount
+                                            <div ng-class="getSortClass(2,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(3,1)">
+                                            Client Type
+                                            <div ng-class="getSortClass(3,1)"></div>
+                                        </th>
+                                        <th>
+                                            Edit/Delete
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+

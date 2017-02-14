@@ -1,0 +1,1213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BOEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBLA_APPLICATION_MODULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLA_CRUDLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="MacAddress" Type="nvarchar" MaxLength="15" />
+    <Property Name="DeviceAddress" Type="nvarchar" MaxLength="15" />
+    <Property Name="DeviceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="TableName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PageID" Type="int" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OldValue" Type="nvarchar(max)" />
+    <Property Name="NewValue" Type="nvarchar(max)" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBLA_LOGIN_STATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PresentLogInStatus" Type="bit" Nullable="false" />
+    <Property Name="LogInTime" Type="datetime" Nullable="false" />
+    <Property Name="LogOutTime" Type="datetime" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ForcedLogOutStatus" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLA_PASSWORD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NewPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OldPassword" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsSelfChanged" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLA_SECURITY_QUESTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SecurityQuestion" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="SecutiryAnswer" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLA_UI_MODULE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="UIName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLA_UI_PAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="UIPageName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ApplicationID" Type="int" Nullable="false" />
+    <Property Name="ModuleID" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="UrlID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLA_URL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ControllerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ClassName" Type="nchar" MaxLength="10" />
+    <Property Name="Url" Type="nvarchar" MaxLength="150" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="UIApplicationID" Type="int" />
+    <Property Name="UIModulID" Type="int" />
+    <Property Name="UIPageID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLA_USER_ACTION_MAPPING">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserGroupID" Type="int" Nullable="false" />
+    <Property Name="ApplicationID" Type="int" Nullable="false" />
+    <Property Name="UIModuleID" Type="int" Nullable="false" />
+    <Property Name="UIPageID" Type="int" Nullable="false" />
+    <Property Name="IsSelect" Type="bit" Nullable="false" />
+    <Property Name="IsCreate" Type="bit" Nullable="false" />
+    <Property Name="IsEdit" Type="bit" Nullable="false" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
+    <Property Name="UrlID" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLA_USER_GROUP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="IsAdmin" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLA_USER_INFORMATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserFullName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="PasswordID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SecurityQuestionID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsEMailVerified" Type="bit" Nullable="false" />
+    <Property Name="IsPhoneNoVerified" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+    <Property Name="UserGroupID" Type="int" Nullable="false" />
+    <Property Name="EmployeeCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="TradingCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="BOCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="IsClient" Type="bit" />
+  </EntityType>
+  <EntityType Name="TBLB_COA">
+    <Key>
+      <PropertyRef Name="COAID" />
+    </Key>
+    <Property Name="COAID" Type="int" Nullable="false" />
+    <Property Name="CostCenterID" Type="int" Nullable="false" />
+    <Property Name="BranchID" Type="int" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="GLName" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="GLACNO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ParentID" Type="int" />
+    <Property Name="POSTFLAG" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="DRCR" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="AuthorizedBy" Type="int" />
+    <Property Name="AuthorizedDate" Type="datetime" />
+    <Property Name="AuthorizedStatus" Type="varchar" MaxLength="1" />
+    <Property Name="ActionStatus" Type="varchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLB_COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="EMail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegisterationNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegisterationDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ActivationDate" Type="datetime" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Image" Type="image" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLB_LOCATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="MobileNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="FaxNo" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="ParentLocationId" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TBLT_COA_TRANSACTION_DETAIL">
+    <Key>
+      <PropertyRef Name="COATRANSACTIONDETAILID" />
+    </Key>
+    <Property Name="COATRANSACTIONDETAILID" Type="int" Nullable="false" />
+    <Property Name="COATransactionID" Type="int" Nullable="false" />
+    <Property Name="GLACNO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEBITAMT" Type="numeric" Precision="25" Scale="15" />
+    <Property Name="CREDITAMT" Type="numeric" Precision="25" Scale="15" />
+    <Property Name="TransType" Type="varchar" MaxLength="2" />
+    <Property Name="CHQNO" Type="varchar" MaxLength="50" />
+    <Property Name="REMARKS" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TBLT_COA_TRANSACTION_MASTER">
+    <Key>
+      <PropertyRef Name="COATRANSACTIONID" />
+    </Key>
+    <Property Name="COATRANSACTIONID" Type="int" Nullable="false" />
+    <Property Name="VoucherTypeID" Type="int" Nullable="false" />
+    <Property Name="VoucherNO" Type="varchar" MaxLength="50" />
+    <Property Name="VoucherDate" Type="datetime" />
+    <Property Name="CostCenterID" Type="int" Nullable="false" />
+    <Property Name="BranchID" Type="int" Nullable="false" />
+    <Property Name="DocRef" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Narration" Type="varchar" MaxLength="200" />
+    <Property Name="Remarks" Type="varchar" MaxLength="150" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="int" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="AuthorizedBy" Type="int" />
+    <Property Name="AuthorizedDate" Type="datetime" />
+    <Property Name="AuthorizedStatus" Type="varchar" MaxLength="1" />
+    <Property Name="ActionStatus" Type="varchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLT_SURVEY_COMMUNICATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ComnucationType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContactNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="300" />
+    <Property Name="FeedBack" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="FollowUpDate" Type="datetime" />
+    <Property Name="CommunicationDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLT_SURVEY_DEPOSIT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepositNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DepositeDate" Type="datetime" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tblCRUDLog_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_CRUDLOG" Type="Self.TBLA_CRUDLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_CRUDLOG">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCRUDLog_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_CRUDLOG" Type="Self.TBLA_CRUDLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_CRUDLOG">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCRUDLog_tblUIPage">
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="0..1" />
+    <End Role="TBLA_CRUDLOG" Type="Self.TBLA_CRUDLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_UI_PAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_CRUDLOG">
+        <PropertyRef Name="PageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCRUDLog_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLA_CRUDLOG" Type="Self.TBLA_CRUDLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_CRUDLOG">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLocation_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLB_LOCATION">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLocation_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="0..1" />
+    <End Role="TBLB_LOCATION1" Type="Self.TBLB_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLB_LOCATION1">
+        <PropertyRef Name="ParentLocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLocation_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLB_LOCATION">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLogInStatus_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_LOGIN_STATUS" Type="Self.TBLA_LOGIN_STATUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_LOGIN_STATUS">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLogInStatus_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_LOGIN_STATUS" Type="Self.TBLA_LOGIN_STATUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_LOGIN_STATUS">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLogInStatus_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLA_LOGIN_STATUS" Type="Self.TBLA_LOGIN_STATUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_LOGIN_STATUS">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPassword_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_PASSWORD" Type="Self.TBLA_PASSWORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_PASSWORD">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPassword_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_PASSWORD" Type="Self.TBLA_PASSWORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_PASSWORD">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPassword_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLA_PASSWORD" Type="Self.TBLA_PASSWORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_PASSWORD">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPassword_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLA_PASSWORD" Type="Self.TBLA_PASSWORD" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_PASSWORD">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSecurityQuestion_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_SECURITY_QUESTION" Type="Self.TBLA_SECURITY_QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_SECURITY_QUESTION">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSecurityQuestion_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_SECURITY_QUESTION" Type="Self.TBLA_SECURITY_QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_SECURITY_QUESTION">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSecurityQuestion_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLA_SECURITY_QUESTION" Type="Self.TBLA_SECURITY_QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_SECURITY_QUESTION">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSecurityQuestion_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLA_SECURITY_QUESTION" Type="Self.TBLA_SECURITY_QUESTION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_SECURITY_QUESTION">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSurveyComuncation_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLT_SURVEY_COMMUNICATION" Type="Self.TBLT_SURVEY_COMMUNICATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLT_SURVEY_COMMUNICATION">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSurveyComuncation_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLT_SURVEY_COMMUNICATION" Type="Self.TBLT_SURVEY_COMMUNICATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLT_SURVEY_COMMUNICATION">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSurveyDeposit_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLT_SURVEY_DEPOSIT" Type="Self.TBLT_SURVEY_DEPOSIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLT_SURVEY_DEPOSIT">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSurveyDeposit_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLT_SURVEY_DEPOSIT" Type="Self.TBLT_SURVEY_DEPOSIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLT_SURVEY_DEPOSIT">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSurveyDeposit_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLT_SURVEY_DEPOSIT" Type="Self.TBLT_SURVEY_DEPOSIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLT_SURVEY_DEPOSIT">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSurveyDeposit_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLT_SURVEY_DEPOSIT" Type="Self.TBLT_SURVEY_DEPOSIT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLT_SURVEY_DEPOSIT">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIApplicationModule_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_APPLICATION_MODULE" Type="Self.TBLA_APPLICATION_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_APPLICATION_MODULE">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIApplicationModule_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_APPLICATION_MODULE" Type="Self.TBLA_APPLICATION_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_APPLICATION_MODULE">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIModule_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_UI_MODULE" Type="Self.TBLA_UI_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_UI_MODULE">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIModule_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_UI_MODULE" Type="Self.TBLA_UI_MODULE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_UI_MODULE">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIPage_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_UI_PAGE">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIPage_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_UI_PAGE">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIPage_tblUIApplicationModule">
+    <End Role="TBLA_APPLICATION_MODULE" Type="Self.TBLA_APPLICATION_MODULE" Multiplicity="1" />
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_APPLICATION_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_UI_PAGE">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUIPage_tblUIModule">
+    <End Role="TBLA_UI_MODULE" Type="Self.TBLA_UI_MODULE" Multiplicity="1" />
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_UI_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_UI_PAGE">
+        <PropertyRef Name="ModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblURL_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_URL" Type="Self.TBLA_URL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_URL">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblURL_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_URL" Type="Self.TBLA_URL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_URL">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblURL_tblUIApplicationModule">
+    <End Role="TBLA_APPLICATION_MODULE" Type="Self.TBLA_APPLICATION_MODULE" Multiplicity="0..1" />
+    <End Role="TBLA_URL" Type="Self.TBLA_URL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_APPLICATION_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_URL">
+        <PropertyRef Name="UIApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblURL_tblUIModule">
+    <End Role="TBLA_UI_MODULE" Type="Self.TBLA_UI_MODULE" Multiplicity="0..1" />
+    <End Role="TBLA_URL" Type="Self.TBLA_URL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_UI_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_URL">
+        <PropertyRef Name="UIModulID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblURL_tblUIPage">
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="0..1" />
+    <End Role="TBLA_URL" Type="Self.TBLA_URL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_UI_PAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_URL">
+        <PropertyRef Name="UIPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblUIApplicationModule">
+    <End Role="TBLA_APPLICATION_MODULE" Type="Self.TBLA_APPLICATION_MODULE" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_APPLICATION_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblUIModule">
+    <End Role="TBLA_UI_MODULE" Type="Self.TBLA_UI_MODULE" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_UI_MODULE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="UIModuleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblUIPage">
+    <End Role="TBLA_UI_PAGE" Type="Self.TBLA_UI_PAGE" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_UI_PAGE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="UIPageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblURL">
+    <End Role="TBLA_URL" Type="Self.TBLA_URL" Multiplicity="0..1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_URL">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="UrlID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblUserGroup">
+    <End Role="TBLA_USER_GROUP" Type="Self.TBLA_USER_GROUP" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserActionMapping_tblUserInformation2">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLA_USER_ACTION_MAPPING" Type="Self.TBLA_USER_ACTION_MAPPING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_ACTION_MAPPING">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserGroup_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_USER_GROUP" Type="Self.TBLA_USER_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_GROUP">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserGroup_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_USER_GROUP" Type="Self.TBLA_USER_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_GROUP">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserGroup_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLA_USER_GROUP" Type="Self.TBLA_USER_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_GROUP">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserGroup_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLA_USER_GROUP" Type="Self.TBLA_USER_GROUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_GROUP">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserInformation_tblCompany">
+    <End Role="TBLB_COMPANY" Type="Self.TBLB_COMPANY" Multiplicity="1" />
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_COMPANY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserInformation_tblLocation">
+    <End Role="TBLB_LOCATION" Type="Self.TBLB_LOCATION" Multiplicity="1" />
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLB_LOCATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserInformation_tblUserGroup">
+    <End Role="TBLA_USER_GROUP" Type="Self.TBLA_USER_GROUP" Multiplicity="1" />
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_GROUP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="UserGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserInformation_tblUserInformation">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="0..1" />
+    <End Role="TBLA_USER_INFORMATION1" Type="Self.TBLA_USER_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_INFORMATION1">
+        <PropertyRef Name="ModifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserInformation_tblUserInformation1">
+    <End Role="TBLA_USER_INFORMATION" Type="Self.TBLA_USER_INFORMATION" Multiplicity="1" />
+    <End Role="TBLA_USER_INFORMATION1" Type="Self.TBLA_USER_INFORMATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLA_USER_INFORMATION">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TBLA_USER_INFORMATION1">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BOEModelStoreContainer">
+    <EntitySet Name="TBLA_APPLICATION_MODULE" EntityType="Self.TBLA_APPLICATION_MODULE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_CRUDLOG" EntityType="Self.TBLA_CRUDLOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_LOGIN_STATUS" EntityType="Self.TBLA_LOGIN_STATUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_PASSWORD" EntityType="Self.TBLA_PASSWORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_SECURITY_QUESTION" EntityType="Self.TBLA_SECURITY_QUESTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_UI_MODULE" EntityType="Self.TBLA_UI_MODULE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_UI_PAGE" EntityType="Self.TBLA_UI_PAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_URL" EntityType="Self.TBLA_URL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_USER_ACTION_MAPPING" EntityType="Self.TBLA_USER_ACTION_MAPPING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_USER_GROUP" EntityType="Self.TBLA_USER_GROUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLA_USER_INFORMATION" EntityType="Self.TBLA_USER_INFORMATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLB_COA" EntityType="Self.TBLB_COA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLB_COMPANY" EntityType="Self.TBLB_COMPANY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLB_LOCATION" EntityType="Self.TBLB_LOCATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLT_COA_TRANSACTION_DETAIL" EntityType="Self.TBLT_COA_TRANSACTION_DETAIL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLT_COA_TRANSACTION_MASTER" EntityType="Self.TBLT_COA_TRANSACTION_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLT_SURVEY_COMMUNICATION" EntityType="Self.TBLT_SURVEY_COMMUNICATION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLT_SURVEY_DEPOSIT" EntityType="Self.TBLT_SURVEY_DEPOSIT" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblCRUDLog_tblCompany" Association="Self.FK_tblCRUDLog_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_CRUDLOG" EntitySet="TBLA_CRUDLOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCRUDLog_tblLocation" Association="Self.FK_tblCRUDLog_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_CRUDLOG" EntitySet="TBLA_CRUDLOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCRUDLog_tblUIPage" Association="Self.FK_tblCRUDLog_tblUIPage">
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+      <End Role="TBLA_CRUDLOG" EntitySet="TBLA_CRUDLOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCRUDLog_tblUserInformation" Association="Self.FK_tblCRUDLog_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_CRUDLOG" EntitySet="TBLA_CRUDLOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLocation_tblCompany" Association="Self.FK_tblLocation_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLocation_tblLocation" Association="Self.FK_tblLocation_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLB_LOCATION1" EntitySet="TBLB_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLocation_tblUserInformation1" Association="Self.FK_tblLocation_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLogInStatus_tblCompany" Association="Self.FK_tblLogInStatus_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_LOGIN_STATUS" EntitySet="TBLA_LOGIN_STATUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLogInStatus_tblLocation" Association="Self.FK_tblLogInStatus_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_LOGIN_STATUS" EntitySet="TBLA_LOGIN_STATUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLogInStatus_tblUserInformation" Association="Self.FK_tblLogInStatus_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_LOGIN_STATUS" EntitySet="TBLA_LOGIN_STATUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPassword_tblCompany" Association="Self.FK_tblPassword_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_PASSWORD" EntitySet="TBLA_PASSWORD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPassword_tblLocation" Association="Self.FK_tblPassword_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_PASSWORD" EntitySet="TBLA_PASSWORD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPassword_tblUserInformation" Association="Self.FK_tblPassword_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_PASSWORD" EntitySet="TBLA_PASSWORD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPassword_tblUserInformation1" Association="Self.FK_tblPassword_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_PASSWORD" EntitySet="TBLA_PASSWORD" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSecurityQuestion_tblCompany" Association="Self.FK_tblSecurityQuestion_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_SECURITY_QUESTION" EntitySet="TBLA_SECURITY_QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSecurityQuestion_tblLocation" Association="Self.FK_tblSecurityQuestion_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_SECURITY_QUESTION" EntitySet="TBLA_SECURITY_QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSecurityQuestion_tblUserInformation" Association="Self.FK_tblSecurityQuestion_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_SECURITY_QUESTION" EntitySet="TBLA_SECURITY_QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSecurityQuestion_tblUserInformation1" Association="Self.FK_tblSecurityQuestion_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_SECURITY_QUESTION" EntitySet="TBLA_SECURITY_QUESTION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSurveyComuncation_tblUserInformation" Association="Self.FK_tblSurveyComuncation_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLT_SURVEY_COMMUNICATION" EntitySet="TBLT_SURVEY_COMMUNICATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSurveyComuncation_tblUserInformation1" Association="Self.FK_tblSurveyComuncation_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLT_SURVEY_COMMUNICATION" EntitySet="TBLT_SURVEY_COMMUNICATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSurveyDeposit_tblCompany" Association="Self.FK_tblSurveyDeposit_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLT_SURVEY_DEPOSIT" EntitySet="TBLT_SURVEY_DEPOSIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSurveyDeposit_tblLocation" Association="Self.FK_tblSurveyDeposit_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLT_SURVEY_DEPOSIT" EntitySet="TBLT_SURVEY_DEPOSIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSurveyDeposit_tblUserInformation" Association="Self.FK_tblSurveyDeposit_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLT_SURVEY_DEPOSIT" EntitySet="TBLT_SURVEY_DEPOSIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSurveyDeposit_tblUserInformation1" Association="Self.FK_tblSurveyDeposit_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLT_SURVEY_DEPOSIT" EntitySet="TBLT_SURVEY_DEPOSIT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIApplicationModule_tblCompany" Association="Self.FK_tblUIApplicationModule_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_APPLICATION_MODULE" EntitySet="TBLA_APPLICATION_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIApplicationModule_tblLocation" Association="Self.FK_tblUIApplicationModule_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_APPLICATION_MODULE" EntitySet="TBLA_APPLICATION_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIModule_tblCompany" Association="Self.FK_tblUIModule_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_UI_MODULE" EntitySet="TBLA_UI_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIModule_tblLocation" Association="Self.FK_tblUIModule_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_UI_MODULE" EntitySet="TBLA_UI_MODULE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIPage_tblCompany" Association="Self.FK_tblUIPage_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIPage_tblLocation" Association="Self.FK_tblUIPage_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIPage_tblUIApplicationModule" Association="Self.FK_tblUIPage_tblUIApplicationModule">
+      <End Role="TBLA_APPLICATION_MODULE" EntitySet="TBLA_APPLICATION_MODULE" />
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUIPage_tblUIModule" Association="Self.FK_tblUIPage_tblUIModule">
+      <End Role="TBLA_UI_MODULE" EntitySet="TBLA_UI_MODULE" />
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblURL_tblCompany" Association="Self.FK_tblURL_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_URL" EntitySet="TBLA_URL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblURL_tblLocation" Association="Self.FK_tblURL_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_URL" EntitySet="TBLA_URL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblURL_tblUIApplicationModule" Association="Self.FK_tblURL_tblUIApplicationModule">
+      <End Role="TBLA_APPLICATION_MODULE" EntitySet="TBLA_APPLICATION_MODULE" />
+      <End Role="TBLA_URL" EntitySet="TBLA_URL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblURL_tblUIModule" Association="Self.FK_tblURL_tblUIModule">
+      <End Role="TBLA_UI_MODULE" EntitySet="TBLA_UI_MODULE" />
+      <End Role="TBLA_URL" EntitySet="TBLA_URL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblURL_tblUIPage" Association="Self.FK_tblURL_tblUIPage">
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+      <End Role="TBLA_URL" EntitySet="TBLA_URL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblCompany" Association="Self.FK_tblUserActionMapping_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblLocation" Association="Self.FK_tblUserActionMapping_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblUIApplicationModule" Association="Self.FK_tblUserActionMapping_tblUIApplicationModule">
+      <End Role="TBLA_APPLICATION_MODULE" EntitySet="TBLA_APPLICATION_MODULE" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblUIModule" Association="Self.FK_tblUserActionMapping_tblUIModule">
+      <End Role="TBLA_UI_MODULE" EntitySet="TBLA_UI_MODULE" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblUIPage" Association="Self.FK_tblUserActionMapping_tblUIPage">
+      <End Role="TBLA_UI_PAGE" EntitySet="TBLA_UI_PAGE" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblURL" Association="Self.FK_tblUserActionMapping_tblURL">
+      <End Role="TBLA_URL" EntitySet="TBLA_URL" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblUserGroup" Association="Self.FK_tblUserActionMapping_tblUserGroup">
+      <End Role="TBLA_USER_GROUP" EntitySet="TBLA_USER_GROUP" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblUserInformation1" Association="Self.FK_tblUserActionMapping_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserActionMapping_tblUserInformation2" Association="Self.FK_tblUserActionMapping_tblUserInformation2">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_USER_ACTION_MAPPING" EntitySet="TBLA_USER_ACTION_MAPPING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserGroup_tblCompany" Association="Self.FK_tblUserGroup_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_USER_GROUP" EntitySet="TBLA_USER_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserGroup_tblLocation" Association="Self.FK_tblUserGroup_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_USER_GROUP" EntitySet="TBLA_USER_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserGroup_tblUserInformation" Association="Self.FK_tblUserGroup_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_USER_GROUP" EntitySet="TBLA_USER_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserGroup_tblUserInformation1" Association="Self.FK_tblUserGroup_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_USER_GROUP" EntitySet="TBLA_USER_GROUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserInformation_tblCompany" Association="Self.FK_tblUserInformation_tblCompany">
+      <End Role="TBLB_COMPANY" EntitySet="TBLB_COMPANY" />
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserInformation_tblLocation" Association="Self.FK_tblUserInformation_tblLocation">
+      <End Role="TBLB_LOCATION" EntitySet="TBLB_LOCATION" />
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserInformation_tblUserGroup" Association="Self.FK_tblUserInformation_tblUserGroup">
+      <End Role="TBLA_USER_GROUP" EntitySet="TBLA_USER_GROUP" />
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserInformation_tblUserInformation" Association="Self.FK_tblUserInformation_tblUserInformation">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_USER_INFORMATION1" EntitySet="TBLA_USER_INFORMATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserInformation_tblUserInformation1" Association="Self.FK_tblUserInformation_tblUserInformation1">
+      <End Role="TBLA_USER_INFORMATION" EntitySet="TBLA_USER_INFORMATION" />
+      <End Role="TBLA_USER_INFORMATION1" EntitySet="TBLA_USER_INFORMATION" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

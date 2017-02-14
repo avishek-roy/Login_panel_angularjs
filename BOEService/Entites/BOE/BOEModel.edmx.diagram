@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3afaf4c976b04975a16e4e4e0e9671aa" Name="Diagram1">
+        <EntityTypeShape EntityType="BOEModel.TBLA_APPLICATION_MODULE" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_CRUDLOG" Width="1.5" PointX="13.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_LOGIN_STATUS" Width="1.5" PointX="6" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_PASSWORD" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_SECURITY_QUESTION" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_UI_MODULE" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_UI_PAGE" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_URL" Width="1.5" PointX="13.5" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_USER_ACTION_MAPPING" Width="1.5" PointX="18.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_USER_GROUP" Width="1.5" PointX="6" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLA_USER_INFORMATION" Width="1.5" PointX="11.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLB_COA" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLB_COMPANY" Width="1.5" PointX="0.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLB_LOCATION" Width="1.5" PointX="16.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLT_COA_TRANSACTION_DETAIL" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLT_COA_TRANSACTION_MASTER" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLT_SURVEY_COMMUNICATION" Width="1.5" PointX="13.5" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BOEModel.TBLT_SURVEY_DEPOSIT" Width="1.5" PointX="21.75" PointY="23" IsExpanded="true" />
+        <AssociationConnector Association="BOEModel.FK_tblUIApplicationModule_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIApplicationModule_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIPage_tblUIApplicationModule" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblURL_tblUIApplicationModule" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblUIApplicationModule" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblCRUDLog_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblCRUDLog_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblCRUDLog_tblUIPage" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblCRUDLog_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblLogInStatus_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblLogInStatus_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblLogInStatus_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblPassword_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblPassword_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblPassword_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblPassword_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSecurityQuestion_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSecurityQuestion_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSecurityQuestion_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSecurityQuestion_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIModule_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIModule_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIPage_tblUIModule" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblURL_tblUIModule" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblUIModule" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIPage_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUIPage_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblURL_tblUIPage" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblUIPage" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblURL_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblURL_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblURL" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblUserGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserActionMapping_tblUserInformation2" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserGroup_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserGroup_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserGroup_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserGroup_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserInformation_tblUserGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblLocation_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSurveyComuncation_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSurveyComuncation_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSurveyDeposit_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSurveyDeposit_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserInformation_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserInformation_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserInformation_tblUserInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblUserInformation_tblUserInformation1" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblLocation_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSurveyDeposit_tblCompany" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblLocation_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="BOEModel.FK_tblSurveyDeposit_tblLocation" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,260 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    .glyphicon {
+        float: right;
+    }
+
+    table.dataTable thead .sorting_asc {
+    background-image: none;
+}
+    table.dataTable thead .sorting_desc {
+        background-image: none;
+    }
+    table.dataTable thead .sorting {
+        background-image: none;
+    }
+</style>
+
+<div ng-controller="locationController" class="container col-md-12">
+    <section class="content-header  padding-top-5" >
+        <h1>
+            Branch
+            <small>Branch Related Data</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Basic Entry</a></li>
+            <li class="active">Branch </li>
+        </ol>
+    </section>
+
+    <section class="content padding-top-5" >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">List of Branch</h3>
+                    </div>
+                    <div class="box-body">
+                        <div>
+                            <a href="#CreateLocation" class="btn btn-success button-size-small"><span class="glyphicon glyphicon-plus"></span> Add New</a>
+                        </div>
+                        <div ng-if="isTableShown" class="col-md-12 no-padding">
+                            <table id="entry-grid" datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped table-bordered table-hover" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th ng-click="sortData(0,0)">
+                                            Code
+                                            <div ng-class="getSortClass(0,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(1,0)">
+                                            Location Name
+                                            <div ng-class="getSortClass(1,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(2,0)">
+                                            Contact No
+                                            <div ng-class="getSortClass(2,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(3,0)">
+                                            EMail
+                                            <div ng-class="getSortClass(3,0)"></div>
+                                        </th>
+                                        <th ng-click="sortData(4,0)">
+                                            Parent Branch
+                                            <div ng-class="getSortClass(4,0)"></div>
+                                        </th>
+                                        <th>
+                                            Edit/Delete
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th ng-click="sortData(0,1)">
+                                            Code
+                                            <div ng-class="getSortClass(0,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(1,1)">
+                                            Location Name
+                                            <div ng-class="getSortClass(1,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(2,1)">
+                                            Contact No
+                                            <div ng-class="getSortClass(2,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(3,1)">
+                                            EMail
+                                            <div ng-class="getSortClass(3,1)"></div>
+                                        </th>
+                                        <th ng-click="sortData(4,1)">
+                                            Parent Branch
+                                            <div ng-class="getSortClass(4,1)"></div>
+                                        </th>
+                                        <th>
+                                            Edit/Delete
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<script>
+    //$(document).ready(function () {
+    //        var oTable = $("#entry-grid").dataTable();
+    //           Sort immediately with columns 0 and 1
+    //          oTable.fnSort( [ [0,'asc'], [1,'asc'] ] );
+    //        } );
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<style>
+        .myGrid {
+            width: 100%;
+            height: 150%;
+        }.grid-align {
+            text-align: center;
+        }
+        .ui-grid-header-canvas {
+            background-color: silver;
+        }.ui-grid-pager-panel {
+            background-color: silver;
+        }
+        .box-header {
+            background-color: silver;
+        }
+        .ui-grid-filter-input {
+            background-color: silver;
+        }
+        .box.box-solid.box-primary {
+        }
+        .box-header {
+        color: #ffffff;
+        background: #bc3c54;
+        background-color: #bc3c54;
+    }
+    </style>*@
+
+
+
+@*<div ng-controller="locationController" class="col-md-10">
+    <h3 ng-init="LoadAllLocations()">
+        Location
+    </h3>
+    <hr />
+    <a href="/#CreateLocation" class="btn btn-success button-size-small"><span class="glyphicon glyphicon-plus"></span>Add New</a>
+        @*<a href="/#CreateLocation" class="btn btn-info custom-button" style="background-color:#cc3300"><i class="glyphicon glyphicon-plus-sign custom-i" aria-hidden="true"></i> Add New Branch</a>*@
+@*<br/>
+            <div class="col-md-12" id="locationGrid"  style="background-color:white" ui-grid="locations" external-scopes="EditUI" ui-grid-pagination class="myGrid">
+
+            </div>
+    </div>*@
+
+@*<div ng-controller="locationController" class="col-md-12" style="height:150%;">
+        <section class="content-header">
+            <h1>Branch</h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>Basic Entry</a></li>
+                <li class="active">Broker </li>
+            </ol>
+        </section>
+        <div class="box box-solid box-primary" ng-init="LoadAllLocations()">
+            <div class="box-header" >
+                <h3 class="box-title">Branch List</h3>
+            </div>
+            <div style="padding-top:1%;padding-left:1%">
+                <a href="/#CreateLocation" class="btn btn-success button-size-small"><span class="glyphicon glyphicon-plus"></span> Add New</a>
+            </div>
+
+            <br />
+            <div class="box-body" style="padding:1%;padding-top:0;">
+                <div id="locationGrid" style="background-color:white;" ui-grid="locations" external-scopes="EditUI" ui-grid-pagination class="myGrid">
+
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+
+

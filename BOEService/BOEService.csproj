@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C919097-5D1F-4F60-B93B-4355E757CE53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BOEService</RootNamespace>
+    <AssemblyName>BOEService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BOEUtility">
+      <HintPath>..\BOEUtility\bin\Debug\BOEUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entites\BOE\BOEModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BOEModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\BOEModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\BOEModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BOEModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_APPLICATION_MODULE.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_CRUDLOG.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_LOGIN_STATUS.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_PASSWORD.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_SECURITY_QUESTION.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_UI_MODULE.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_UI_PAGE.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_URL.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_USER_ACTION_MAPPING.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_USER_GROUP.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLA_USER_INFORMATION.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLB_COA.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLB_COMPANY.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLB_LOCATION.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLT_COA_TRANSACTION_DETAIL.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLT_COA_TRANSACTION_MASTER.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLT_SURVEY_COMMUNICATION.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entites\BOE\TBLT_SURVEY_DEPOSIT.cs">
+      <DependentUpon>BOEModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\SurveyFactory.cs" />
+    <Compile Include="Factories\CommonFactory.cs" />
+    <Compile Include="Factories\GenericFactory.cs" />
+    <Compile Include="Factories\ReadOnlyFactory.cs" />
+    <Compile Include="Factories\Securityactory.cs" />
+    <Compile Include="Interfaces\ISurveyFactory.cs" />
+    <Compile Include="Interfaces\ICommonFactory.cs" />
+    <Compile Include="Interfaces\IGenericFactory.cs" />
+    <Compile Include="Interfaces\IReadOnlyFactory.cs" />
+    <Compile Include="Interfaces\ISecurityFactory.cs" />
+    <Compile Include="Models\LogInStatus.cs" />
+    <Compile Include="Models\PagePermissionVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Metadata\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Entites\BOE\BOEModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BOEModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entites\BOE\BOEModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BOEModel.edmx</DependentUpon>
+      <LastGenOutput>BOEModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Entites\BOE\BOEModel.edmx.diagram">
+      <DependentUpon>BOEModel.edmx</DependentUpon>
+    </None>
+    <None Include="Entites\BOE\BOEModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BOEModel.edmx</DependentUpon>
+      <LastGenOutput>BOEModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\ui-grid.js" />
+    <Content Include="Scripts\ui-grid.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

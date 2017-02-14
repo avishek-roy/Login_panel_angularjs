@@ -1,0 +1,169 @@
+﻿@{
+    Layout = null;
+}
+
+
+<style>
+    .glyphicon {
+        float: right;
+    }
+
+    table.dataTable thead .sorting_asc {
+        background-image: none;
+    }
+
+    table.dataTable thead .sorting_desc {
+        background-image: none;
+    }
+
+    table.dataTable thead .sorting {
+        background-image: none;
+    }
+</style>
+
+<div ng-controller="TredarSurveyPositionController" class="col-md-12">
+    <section class="content-header padding-top-5">
+        <h1>
+            Trader Position
+            <small> Trader Deposit related data</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Client Survey</a></li>
+            <li class="active">Trader Position By Deposit</li>
+        </ol>
+    </section>
+    <section class="content padding-top-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-solid box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">Trader Position By Deposit</h3>
+                    </div>
+                    <form name="TredarSurveyPositionForm" ng-init="LoadDropdowns()">
+                        <div class="box-body">
+
+                            <div class="box box-warning">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Search Criterion</h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>
+                                                    Trader Name
+                                                </label>
+                                                <select data-ng-model="survey.UserName" ng-change="destroy()" required class="form-control"
+                                                        ng-options="Trader.UserName as Trader.UserFullName for Trader in TraderList">
+                                                    <option value="">Please select Trader</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>
+                                                    From Date
+                                                </label>
+                                                @*<input type="date" class="form-control " ng-change="destroy()" ng-model="survey.FromDate" />*@
+                                                <div class="input-group" moment-picker="survey.FromDate" format="DD-MM-YYYY">
+                                                    <input type="text" class="form-control" placeholder="Select a date (Ex. DD-MM-YYYY)"
+                                                           ng-model="survey.FromDate"
+                                                           onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 46 || event.keyCode == 8 || event.keyCode == 46)'
+                                                           ng-model-options="{ updateOn: 'blur' }">
+                                                    <span class="input-group-addon">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>
+                                                    To
+                                                </label>
+                                                @*<input type="date" class="form-control " ng-change="destroy()" ng-model="survey.ToDate" />*@
+                                                @*<div class="input-group" moment-picker="survey.ToDate" format="DD-MM-YYYY">
+                                                    <input class="form-control datemask" placeholder="Select a date" ng-model="survey.ToDate"
+                                                           ng-model-options="{ updateOn: 'blur' }">
+                                                    <span class="input-group-addon">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </span>
+                                                </div>*@
+                                                <div class="input-group" moment-picker="survey.ToDate" format="DD-MM-YYYY">
+                                                    <input type="text" class="form-control" placeholder="Select a date (Ex. DD-MM-YYYY)"
+                                                           ng-model="survey.ToDate"
+                                                           onkeypress='return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 8 || event.charCode == 46 || event.keyCode == 8 || event.keyCode == 46)'
+                                                           ng-model-options="{ updateOn: 'blur' }">
+                                                    <span class="input-group-addon">
+                                                        <i class="glyphicon glyphicon-calendar"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- /.box-body -->
+                                <div class="box-footer">
+                                    <button data-ng-click="Search()" style="float:left" class="btn btn-success button-size-small glyphicon"><span class="glyphicon glyphicon-search"></span>Search</button>
+                                </div>
+                            </div><!-- /.box -->
+                            <div class="box box-success" ng-if="isTableShown">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"> Deposite Informations <small><label class="label size-14 text-black line-height-1pt10">Trader : {{user.UserFullName}}</label> <label class="label size-14 text-black line-height-1pt10">Branch : {{user.Name}}</label></small> </h3>
+                                </div>
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="padding-10">
+                                            <table id="entry-grid" datatable="" dt-options="dtOptions" dt-columns="dtColumns" class="table table-striped table-bordered table-hover no-footer " style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th ng-click="sortData(0,0)">
+                                                            Date
+                                                            <div ng-class="getSortClass(0,0)"></div>
+                                                        </th>
+                                                        <th ng-click="sortData(1,0)">
+                                                            Client Code
+                                                            <div ng-class="getSortClass(1,0)"></div>
+                                                        </th>
+                                                        <th ng-click="sortData(2,0)">
+                                                            Amount
+                                                            <div ng-class="getSortClass(2,0)"></div>
+                                                        </th>
+                                                        <th ng-click="sortData(3,0)">
+                                                            Client Type
+                                                            <div ng-class="getSortClass(3,0)"></div>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th ng-click="sortData(0,1)">
+                                                            Date
+                                                            <div ng-class="getSortClass(0,1)"></div>
+                                                        </th>
+                                                        <th ng-click="sortData(1,1)">
+                                                            Client Code
+                                                            <div ng-class="getSortClass(1,1)"></div>
+                                                        </th>
+                                                        <th ng-click="sortData(2,1)">
+                                                            Amount
+                                                            <div ng-class="getSortClass(2,1)"></div>
+                                                        </th>
+                                                        <th ng-click="sortData(3,1)">
+                                                            Client Type
+                                                            <div ng-class="getSortClass(3,1)"></div>
+                                                        </th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

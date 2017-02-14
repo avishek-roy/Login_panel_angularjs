@@ -1,0 +1,30 @@
+﻿    .input-validation-error, .required
+    {
+        border-left:5px solid #ee0000 !important;
+    }
+    .valid
+    {
+        border-left:5px solid #00aa00 !important;
+    }.field-validation-error
+    {
+        color:#990000;
+    }
+    input:required {
+      border-left:5px solid #00aa00 !important;
+    }
+    input:required:invalid {
+      border-left:5px solid #ee0000 !important;
+    }
+    .custome-textbox {
+        height:23px;
+    }
+    box-header {
+        background-color: lightseagreen;
+    }
+    .form-control
+    {
+        border-radius: 3px !important;
+        box-shadow: none;
+        border-color: #f39c12;
+        border: 1px solid;
+    }
